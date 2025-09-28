@@ -1,11 +1,8 @@
 import OverviewPage from "@/pages/OverviewPage";
 import IntegrationPage from "@/pages/IntegrationPage";
 
-// import Group1Test1 from "@/pages/group1/Group1Test1";
-//   import Group1Test2 from "@/pages/group1/Group1Test2";
-//   import Group2Test1 from "@/pages/group2/Group2Test1";
-//   import Group2Test2 from "@/pages/group2/Group2Test2";
 import MapBasic from "@/pages/map/MapBasic";
+import MapControl from "@/pages/map/MapControl";
 // URL 라우트 상수 정의
 export const ROUTES = {
   // 개요
@@ -13,6 +10,7 @@ export const ROUTES = {
   INTEGRATION: "/integration",
   // map
   MAP_BASIC: "/map/basic",
+  MAP_CONTROL: "/map/control",
   // 그룹2
   GROUP2_TEST1: "/group2/test1",
   GROUP2_TEST2: "/group2/test2",
@@ -38,24 +36,12 @@ export const ROUTE_CONFIG = [
     title: "지도-기본",
     group: "map",
   },
-  // {
-  //   path: ROUTES.GROUP1_TEST2,
-  //   element: <Group1Test2 />,
-  //   title: "그룹1-테스트2",
-  //   group: "group1",
-  // },
-  // {
-  //   path: ROUTES.GROUP2_TEST1,
-  //   element: <Group2Test1 />,
-  //   title: "그룹2-테스트1",
-  //   group: "group2",
-  // },
-  // {
-  //   path: ROUTES.GROUP2_TEST2,
-  //   element: <Group2Test2 />,
-  //   title: "그룹2-테스트2",
-  //   group: "group2",
-  // },
+  {
+    path: ROUTES.MAP_CONTROL,
+    element: <MapControl />,
+    title: "지도-컨트롤",
+    group: "map",
+  },
 ];
 
 // 메뉴 그룹 구조 정의
