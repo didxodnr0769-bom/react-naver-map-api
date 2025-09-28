@@ -3,6 +3,7 @@ import IntegrationPage from "@/pages/IntegrationPage";
 
 import MapBasic from "@/pages/map/MapBasic";
 import MapControl from "@/pages/map/MapControl";
+import CustomMarker from "@/pages/marker/CustomMarker";
 // URL 라우트 상수 정의
 export const ROUTES = {
   // 개요
@@ -14,6 +15,8 @@ export const ROUTES = {
   // 그룹2
   GROUP2_TEST1: "/group2/test1",
   GROUP2_TEST2: "/group2/test2",
+  // marker
+  CUSTOM_MARKER: "/marker/custom",
 };
 
 // 라우트 설정 (path와 element를 모두 포함)
@@ -42,6 +45,12 @@ export const ROUTE_CONFIG = [
     title: "지도-컨트롤",
     group: "map",
   },
+  {
+    path: ROUTES.CUSTOM_MARKER,
+    element: <CustomMarker />,
+    title: "마커-커스텀",
+    group: "marker",
+  },
 ];
 
 // 메뉴 그룹 구조 정의
@@ -59,6 +68,14 @@ export const MENU_GROUPS = [
     id: "map",
     title: "지도",
     items: ROUTE_CONFIG.filter((route) => route.group === "map").map(
+      (route) => ({ path: route.path, title: route.title }),
+    ),
+  },
+  // 마커
+  {
+    id: "marker",
+    title: "마커",
+    items: ROUTE_CONFIG.filter((route) => route.group === "marker").map(
       (route) => ({ path: route.path, title: route.title }),
     ),
   },
