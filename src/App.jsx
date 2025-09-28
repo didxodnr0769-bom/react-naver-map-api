@@ -4,9 +4,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ROUTE_CONFIG } from "@/constants/routes.jsx";
 import { PageProvider } from "@/contexts/PageContext";
 import Header from "@/components/Header";
-import { LoadScript } from "@react-google-maps/api";
-
-const libraries = ["places", "drawing", "geometry"];
 
 function App() {
   // 모바일에서는 기본적으로 사이드바 닫힘, 데스크톱에서는 열림
@@ -21,27 +18,22 @@ function App() {
   return (
     <Router>
       <PageProvider>
-        <LoadScript
-          googleMapsApiKey={import.meta.env.VITE_GOOGLE_MAP_KEY}
-          libraries={libraries}
-        >
-          <div className="app">
-            <Header isOpen={isSidebarOpen} onToggleSidebar={toggleSidebar} />
-            <main
-              className={`main-content ${isSidebarOpen ? "sidebar-open" : ""}`}
-            >
-              <Routes>
-                {ROUTE_CONFIG.map((route) => (
-                  <Route
-                    key={route.path}
-                    path={route.path}
-                    element={route.element}
-                  />
-                ))}
-              </Routes>
-            </main>
-          </div>
-        </LoadScript>
+        <div className="app">
+          <Header isOpen={isSidebarOpen} onToggleSidebar={toggleSidebar} />
+          <main
+            className={`main-content ${isSidebarOpen ? "sidebar-open" : ""}`}
+          >
+            <Routes>
+              {ROUTE_CONFIG.map((route) => (
+                <Route
+                  key={route.path}
+                  path={route.path}
+                  element={route.element}
+                />
+              ))}
+            </Routes>
+          </main>
+        </div>
       </PageProvider>
     </Router>
   );
