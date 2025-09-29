@@ -35,7 +35,7 @@ const SideBar = ({ isOpen, onClose }) => {
       {/* 사이드바 */}
       <aside className={`sidebar ${isOpen ? "open" : ""}`}>
         <div className="sidebar-header">
-          <h2>Google Maps React</h2>
+          <h2>Naver Maps React</h2>
           <button
             className="close-btn"
             onClick={onClose}
