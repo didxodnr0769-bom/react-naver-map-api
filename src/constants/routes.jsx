@@ -4,6 +4,7 @@ import IntegrationPage from "@/pages/IntegrationPage";
 import MapBasic from "@/pages/map/MapBasic";
 import MapControl from "@/pages/map/MapControl";
 import CustomMarker from "@/pages/marker/CustomMarker";
+import MarkerClusteringTest from "@/pages/marker/MarkerClusteringTest";
 // URL 라우트 상수 정의
 export const ROUTES = {
   // 개요
@@ -17,6 +18,7 @@ export const ROUTES = {
   GROUP2_TEST2: "/group2/test2",
   // marker
   CUSTOM_MARKER: "/marker/custom",
+  MARKER_CLUSTERING: "/marker/clustering",
 };
 
 // 라우트 설정 (path와 element를 모두 포함)
@@ -49,6 +51,12 @@ export const ROUTE_CONFIG = [
     path: ROUTES.CUSTOM_MARKER,
     element: <CustomMarker />,
     title: "마커-커스텀",
+    group: "marker",
+  },
+  {
+    path: ROUTES.MARKER_CLUSTERING,
+    element: <MarkerClusteringTest />,
+    title: "마커-클러스터링",
     group: "marker",
   },
 ];
